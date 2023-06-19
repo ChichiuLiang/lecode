@@ -2,7 +2,7 @@ package org.example.p1400;
 
 import java.util.Arrays;
 
-public class p1483 {
+public class p1483_review_hard {
     class TreeAncestor {
         static final int LOG = 16;
         int[][] ancestors;
@@ -27,6 +27,7 @@ public class p1483 {
 
         public int getKthAncestor(int node, int k) {
             for (int j = 0; j < LOG; j++) {
+                // 检查二进制数 k 的第 j 位是否为1
                 if (((k >> j) & 1) != 0) {
                     node = ancestors[node][j];
                     if (node == -1) {
