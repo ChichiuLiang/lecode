@@ -1,9 +1,7 @@
-package org.example.p1177;
+package org.example.p1100;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class p1177_review_overtime {
 //    public List<Boolean> canMakePaliQueries(String s, int[][] queries) {
@@ -70,8 +68,13 @@ public class p1177_review_overtime {
          }
 
          for(int q[] :queries){
+             // 计算子串的前缀异或值并统计其中1的个数（表示字符出现的奇偶次数）
              int count = Integer.bitCount(prefix[q[1]+1] ^ prefix[q[0]]);
              res.add(count/2<=q[2]);
+             //巧妙地运用了整除向下取整，规避了判断奇偶
+
+
+
 
          }
          return res;
